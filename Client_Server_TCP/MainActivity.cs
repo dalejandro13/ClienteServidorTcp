@@ -9,12 +9,18 @@ namespace Client_Server_TCP
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        Button btn1, btn2; //bt1 -> cliente ; btn2 -> servidor
+        
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            btn1 = FindViewById<Button>(Resource.Id.btnClient);
+            btn2 = FindViewById<Button>(Resource.Id.btnServer);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
